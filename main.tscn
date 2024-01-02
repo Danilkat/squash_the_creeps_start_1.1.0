@@ -75,10 +75,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15201, 0)
 curve = SubResource("Curve3D_ihyi5")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
-transform = Transform3D(0.0894458, -9.16766e-05, -0.995992, 7.27596e-12, 1, -9.20455e-05, 0.995992, 8.23307e-06, 0.0894458, -14.6799, 0.0118408, -15.3358)
+transform = Transform3D(0.089436, 0, -0.995993, 0, 1, 0, 0.995993, 0, 0.089436, -14.68, 1.6, -15.336)
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
 
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
