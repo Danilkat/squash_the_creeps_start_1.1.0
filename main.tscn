@@ -18,7 +18,7 @@ material = SubResource("StandardMaterial3D_ojgr2")
 
 [sub_resource type="Curve3D" id="Curve3D_ihyi5"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -14.6799, 0.0118408, -15.3358, 0, 0, 0, 0, 0, 0, 15.7003, 0.0146484, -18.0641, 0, 0, 0, 0, 0, 0, 13.2129, -0.0128174, 16.3357, 0, 0, 0, 0, 0, 0, -14.2848, 0.0610662, 16.5337, 0, 0, 0, 0, 0, 0, -14.6799, 0.0118408, -15.3358),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -14.68, 1.6, -15.336, 0, 0, 0, 0, 0, 0, 15.7, 1.6, -18.064, 0, 0, 0, 0, 0, 0, 13.213, 1.6, 16.336, 0, 0, 0, 0, 0, 0, -14.285, 1.6, 16.534, 0, 0, 0, 0, 0, 0, -14.68, 1.6, -15.336),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -47,7 +47,7 @@ collision_mask = 6
 [node name="CameraPivot" type="Marker3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 19.09, 19)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.038, 19, 19.053)
 projection = 1
 size = 19.018
 
@@ -71,7 +71,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5852, 0, -17.9539)
 mesh = SubResource("CylinderMesh_py44f")
 
 [node name="SpawnPath" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.716803, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15201, 0)
 curve = SubResource("Curve3D_ihyi5")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
