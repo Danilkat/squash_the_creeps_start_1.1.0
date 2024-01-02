@@ -18,7 +18,7 @@ material = SubResource("StandardMaterial3D_ojgr2")
 
 [sub_resource type="Curve3D" id="Curve3D_ihyi5"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -14.6799, 0.0118408, -15.3358, 0, 0, 0, 0, 0, 0, 15.7003, 0.0146484, -18.0641, 0, 0, 0, 0, 0, 0, 13.2129, -0.0128174, 16.3357, 0, 0, 0, 0, 0, 0, -14.0829, -0.0135498, 16.4158, 0, 0, 0, 0, 0, 0, -14.6799, 0.0118408, -15.3358),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -14.6799, 0.0118408, -15.3358, 0, 0, 0, 0, 0, 0, 15.7003, 0.0146484, -18.0641, 0, 0, 0, 0, 0, 0, 13.2129, -0.0128174, 16.3357, 0, 0, 0, 0, 0, 0, -14.2848, 0.0610662, 16.5337, 0, 0, 0, 0, 0, 0, -14.6799, 0.0118408, -15.3358),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -28,6 +28,7 @@ script = ExtResource("1_ec6y6")
 mob_scene = ExtResource("2_rpqry")
 
 [node name="Ground" type="StaticBody3D" parent="."]
+collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape3D_nihcp")
@@ -41,6 +42,7 @@ transform = Transform3D(0.618335, 0.784283, 0.0506122, 0.15176, -0.182339, 0.971
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_rolkw")]
+collision_mask = 6
 
 [node name="CameraPivot" type="Marker3D" parent="."]
 
@@ -50,6 +52,7 @@ projection = 1
 size = 19.018
 
 [node name="Cylinders" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02226, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5592, 0, -15.3818)
@@ -68,9 +71,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5852, 0, -17.9539)
 mesh = SubResource("CylinderMesh_py44f")
 
 [node name="SpawnPath" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.716803, 0)
 curve = SubResource("Curve3D_ihyi5")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
+transform = Transform3D(0.0894458, -9.16766e-05, -0.995992, 7.27596e-12, 1, -9.20455e-05, 0.995992, 8.23307e-06, 0.0894458, -14.6799, 0.0118408, -15.3358)
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
